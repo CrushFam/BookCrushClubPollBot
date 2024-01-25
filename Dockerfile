@@ -3,7 +3,7 @@ WORKDIR /app
 
 COPY requirements.txt requirements.txt
 RUN pip3 install -r requirements.txt
-RUN apt install snapd && snap install just
+RUN /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" && brew install just
 
 COPY . .
 
