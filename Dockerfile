@@ -3,7 +3,7 @@ WORKDIR /app
 
 COPY requirements.txt requirements.txt
 RUN pip3 install -r requirements.txt
-RUN git clone https://mpr.makedeb.org/just && cd just && makedeb -si
+RUN apt install snapd && snap install just
 
 COPY . .
 
